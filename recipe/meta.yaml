@@ -1,5 +1,5 @@
 {% set name = "robotframework-browser" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a79bd21d395ecf6eb2551e4fa1abc67ad25223c8f17bbb83e668425f0a0f9922
+  sha256: 4dce0330539e24e91f1af2ed0bb852fb12108036440f76d4730e05191993bb60
 
 build:
   number: 0
@@ -45,7 +45,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: 'Robot Framework Browser library powered by Playwright.'
+  summary: Robot Framework Browser library powered by Playwright.
   description: |
     Robot Framework Browser library powered by Playwright. Moving browser automation to year 2020 (or 2021)!
     Aiming for speed, reliability and visibility.
