@@ -156,4 +156,5 @@ Feedstock Maintainers
 =====================
 
 * [@martinRenou](https://github.com/martinRenou/)
+* [@xylix](https://github.com/xylix/)
 

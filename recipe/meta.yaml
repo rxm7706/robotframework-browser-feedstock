@@ -10,12 +10,13 @@ source:
   sha256: 4dce0330539e24e91f1af2ed0bb852fb12108036440f76d4730e05191993bb60
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv && rfbrowser init
+  skip: true # [py<37]
 
 requirements:
   host:
-    - python  >=3.7
+    - python
     - pip
     - nodejs
     - backports.cached-property
@@ -26,7 +27,7 @@ requirements:
     - typing-extensions >=3.7.4.3
     - wrapt
   run:
-    - python  >=3.7
+    - python
     - nodejs
     - backports.cached-property
     - grpcio >=1.33.1
