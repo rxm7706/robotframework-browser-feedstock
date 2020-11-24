@@ -1,6 +1,5 @@
 {% set name = "robotframework-browser" %}
 {% set version = "2.2.0" %}
-{% set grpcio_version = "1.33.2" %}
 
 package:
   name: {{ name|lower }}
@@ -21,21 +20,21 @@ requirements:
     - pip
     - nodejs
     - backports.cached-property
-    - grpcio =={{ grpcio_version }}
-    - grpcio-tools =={{ grpcio_version }}
-    - robotframework >=3.2.2
-    - robotframework-pythonlibcore >=2.1.0
-    - typing-extensions >=3.7.4.3
+    - grpcio
+    - grpcio-tools
+    - robotframework
+    - robotframework-pythonlibcore
+    - typing-extensions
     - wrapt
   run:
     - python
     - nodejs
     - backports.cached-property
-    - grpcio =={{ grpcio_version }}
-    - grpcio-tools =={{ grpcio_version }}
-    - robotframework >=3.2.2
-    - robotframework-pythonlibcore >=2.1.0
-    - typing-extensions >=3.7.4.3
+    - grpcio
+    - grpcio-tools
+    - robotframework
+    - robotframework-pythonlibcore
+    - typing-extensions
     - wrapt
 
 test:
