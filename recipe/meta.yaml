@@ -12,7 +12,7 @@ source:
 build:
   number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv && rfbrowser init
-  skip: true # [py<37]
+  skip: true  # [py<37]
 
 requirements:
   host:
