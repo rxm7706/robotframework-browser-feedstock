@@ -10,7 +10,7 @@ source:
   sha256: 22e0ea0073ce3b440e31b5dca8031dd371f7f2e6f58acac00ae167c40680abd2
 
 build:
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . --no-deps -vv && rfbrowser init
   skip: true  # [py<37]
 
