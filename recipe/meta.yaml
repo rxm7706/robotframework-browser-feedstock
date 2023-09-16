@@ -1,45 +1,46 @@
 {% set name = "robotframework-browser" %}
-{% set version = "2.3.0" %}
+{% set version = "17.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 22e0ea0073ce3b440e31b5dca8031dd371f7f2e6f58acac00ae167c40680abd2
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robotframework-browser-{{ version }}.tar.gz
+  sha256: 8b8aa2468da27f74c7bb325c0ff7dc6ef38f91149bc2c9e6435591d76ae48730
 
 build:
-  number: 5
-  script: {{ PYTHON }} -m pip install . --no-deps -vv && rfbrowser init
-  skip: true  # [py<37]
+  entry_points:
+    - rfbrowser=Browser.entry:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
-    - python
+    - python >=3.8,<4.0
     - pip
-    - nodejs
-    - backports.cached-property
-    - grpcio
-    - grpcio-tools
-    - robotframework
-    - robotframework-pythonlibcore
-    - typing-extensions
-    - wrapt
+    - nodejs >=18.0
   run:
-    - python
-    - nodejs
-    - backports.cached-property
+    - python >=3.8,<4.0
+    - nodejs >=18.0
     - grpcio
     - grpcio-tools
-    - robotframework
-    - robotframework-pythonlibcore
-    - typing-extensions
-    - wrapt
+    - protobuf
+    - robotframework >=5.0.1
+    - robotframework-pythonlibcore >=3.0.0
+    - robotframework-assertion-engine >=2.0.0
+    - typing-extensions >=4.5.0
+    - wrapt >=1.15.0
+    - overrides >=7.3.1
 
 test:
   imports:
     - Browser
+  commands:
+    - rfbrowser --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/MarketSquare/robotframework-browser
