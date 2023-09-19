@@ -28,7 +28,7 @@ requirements:
     - grpcio
     - grpcio-tools
     - protobuf
-    - robotframework >=6.0.1
+    - robotframework >=5.0.1
     - robotframework-pythonlibcore >=4.2.0
     - robotframework-assertion-engine >=2.0.0
     - typing-extensions >=4.5.0
