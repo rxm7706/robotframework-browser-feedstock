@@ -1,5 +1,5 @@
 {% set name = "robotframework-browser" %}
-{% set version = "17.4.0" %}
+{% set version = "17.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robotframework-browser-{{ version }}.tar.gz
-  sha256: 8b8aa2468da27f74c7bb325c0ff7dc6ef38f91149bc2c9e6435591d76ae48730
+  sha256: ec68e5779fe8d76408e341ce603912746d0c3eeb5253bfcf155a7a29333ac082
 
 build:
   entry_points:
@@ -30,10 +30,11 @@ requirements:
     - protobuf
     - robotframework >=5.0.1
     - robotframework-pythonlibcore >=4.2.0
-    - robotframework-assertion-engine >=2.0.0
+    - robotframework-assertion-engine >=2.0.0,<3.0.0
     - typing-extensions >=4.5.0
     - wrapt >=1.15.0
     - overrides >=7.3.1
+    - click >=8.1.7
 
 test:
   imports:
