@@ -1,5 +1,5 @@
 {% set name = "robotframework-browser" %}
-{% set version = "17.5.1" %}
+{% set version = "18.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robotframework-browser-{{ version }}.tar.gz
-  sha256: ec68e5779fe8d76408e341ce603912746d0c3eeb5253bfcf155a7a29333ac082
+  sha256: d1053c55c914fc3e031990cd519ac9e5e844d0e63d2a0568b96443aa2dea2c7e
 
 build:
   entry_points:
-    - rfbrowser=Browser.entry:main
+    - rfbrowser=Browser.entry:cli
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -28,9 +28,9 @@ requirements:
     - grpcio
     - grpcio-tools
     - protobuf
-    - robotframework >=5.0.1
-    - robotframework-pythonlibcore >=4.2.0
-    - robotframework-assertion-engine >=2.0.0,<3.0.0
+    - robotframework >=5.0.1,<8.0.0
+    - robotframework-pythonlibcore >=4.3.0,5.0.0
+    - robotframework-assertion-engine >=3.0.3,<4.0.0
     - typing-extensions >=4.5.0
     - wrapt >=1.15.0
     - overrides >=7.3.1
