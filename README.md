@@ -151,7 +151,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/rpaframework-core](https://github.com/conda-forge/rpaframework-core/)
+* [@conda-forge/rpaframework-core](https://github.com/orgs/conda-forge/teams/rpaframework-core/)
 * [@martinRenou](https://github.com/martinRenou/)
 * [@xylix](https://github.com/xylix/)
 
