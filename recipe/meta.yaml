@@ -1,41 +1,40 @@
 {% set name = "robotframework-browser" %}
-{% set version = "18.0.0" %}
+{% set version = "19.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/robotframework-browser-{{ version }}.tar.gz
-  sha256: d1053c55c914fc3e031990cd519ac9e5e844d0e63d2a0568b96443aa2dea2c7e
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/robotframework_browser-{{ version }}.tar.gz
+  sha256: b81e7bba0c84f782b8bb61c0b412a6a0205ae0f6d029dd2e82a17ed9da036028
 
 build:
   entry_points:
-    - rfbrowser=Browser.entry:cli
+    - rfbrowser=Browser.entry.__main__:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }},<4.0
     - pip
     - setuptools
     - nodejs >=18.0
-
   run:
-    - python >=3.8,<4.0
-    - nodejs >=18.0
+    - python >={{ python_min }},<4.0
     - grpcio
     - grpcio-tools
     - protobuf
     - robotframework >=5.0.1,<8.0.0
-    - robotframework-pythonlibcore >=4.3.0,<5.0.0
+    - robotframework-pythonlibcore >=4.4.1,<5.0.0
     - robotframework-assertion-engine >=3.0.3,<4.0.0
     - typing-extensions >=4.5.0
     - wrapt >=1.15.0
     - overrides >=7.3.1
     - click >=8.1.7
+    - seedir >=0.5.0
 
 test:
   imports:
@@ -43,6 +42,7 @@ test:
   commands:
     - rfbrowser --help
   requires:
+    - python {{ python_min }},<4.0
     - pip
 
 about:
